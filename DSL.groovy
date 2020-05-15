@@ -7,7 +7,7 @@ job('First-Maven-Project-Via-DSL') {
         scm('* * * * *')
     }
     steps {
-        maven('clean package', 'C:\Users\enimara\Downloads\app\app_new\pom.xml')
+        maven('clean package', 'C:/Users/enimara/Downloads/app/app_new/pom.xml')
     }
     publishers {
         //archive the war file generated

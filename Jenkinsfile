@@ -1,4 +1,4 @@
-    pipeline {
+pipeline {
     agent any
     stages {
         stage('Build Application') {
@@ -12,14 +12,20 @@
                 }
             }
         }
+        stage('Deploy in Staging Environment'){
+            steps{
+                build job: 'Deploy_Application_Staging_Env'
 
-        stage('Create Tomcat Docker Image'){
-            steps {
-                sh "pwd"
-                sh "ls -a"
-                sh "docker build ./java-tomcat-sample-docker -t tomcatsamplewebapp:${env.BUILD_ID}"
+            }
+            
+        }
+        stage('Deploy to Production'){
+            steps{
+                timeout(time:5, unit:'DAYS'){
+                    input message:'Approve PRODUCTION Deployment?'
+                }
+                build job: 'Deploy_Application_Prod_Env'
             }
         }
-
     }
 }

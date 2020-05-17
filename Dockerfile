@@ -1,4 +1,4 @@
 FROM java:8
 WORKDIR /target
-ADD /*.jar app.jar
+ADD /app-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080

@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
             steps {
-                sh 'mvn -f SpringBoot/pom.xml clean package'
+                sh 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
             }
             post {
                 success {

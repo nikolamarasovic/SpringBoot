@@ -1,4 +1,5 @@
-FROM tomcat:8.0
-RUN cp -a **/*jar /
+FROM azul/zulu-openjdk-alpine:8
+
+ADD **/*.jar /app.jar
 EXPOSE 8080
-CMD ["catalina.sh", "run"]
+CMD java -jar app.jar

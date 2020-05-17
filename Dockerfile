@@ -1,3 +1,3 @@
-FROM azul/zulu-openjdk-alpine:8
-RUN cp -a **/*.jar /
+FROM java:8
+RUN cp -a **/*.jar /app.jar
 EXPOSE 8080

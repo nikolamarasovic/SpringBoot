@@ -13,7 +13,7 @@ pipeline {
             }
         }
 
-        stage('Create Tomcat Docker Image'){
+        stage('Create Docker Image'){
             steps {
                 
                 bat "dir"

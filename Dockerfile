@@ -1,3 +1,3 @@
 FROM java:8
-RUN cp -a  **/*.jar app.jar
+RUN cp -a  **/*.jar /
 EXPOSE 8080

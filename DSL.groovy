@@ -3,14 +3,12 @@ job('First-Maven-Project-Via-DSL') {
     scm {
         git("https://github.com/nikolamarasovic/SpringBoot.git", 'master')
     }
-    triggers {
-        scm('* * * * *')
-    }
+   
     steps {
         maven('clean package', 'C:/Users/enimara/Downloads/app/app_new/pom.xml')
     }
     publishers {
         //archive the war file generated
-        archiveArtifacts '**/*.war'
+        archiveArtifacts '**/*.jar'
     }
 }

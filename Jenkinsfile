@@ -7,7 +7,12 @@ pipeline {
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
                 
                 scm {
-                    git("https://github.com/nikolamarasovic/demo.git", 'master')
+                    git {
+                        remote {
+                        url 'https://github.com/lexandro/restapi-demo.git' 
+                        }
+                        branch 'master'
+                        }
                 }
                 triggers {
                     githubPush()

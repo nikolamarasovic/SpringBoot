@@ -2,13 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-            configure {
-                it / 'triggers' << 'com.cloudbees.jenkins.GitHubPushTrigger'{
-                spec''
-            }
+            
             scm {
                 git("https://github.com/nikolamarasovic/demo.git", 'master')
             }
+            triggers {
+                githubPush()
+            }           
             steps {
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
             }

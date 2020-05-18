@@ -16,7 +16,7 @@ pipeline {
         stage('Create Docker Image'){
             steps {
                 
-                bat "dir"
+                bat "cd C:/Users/enimara/Downloads/app/app_new/target/app-0.0.1-SNAPSHOT.jar"
                 bat "docker build ./ -t springapp:${env.BUILD_ID}"
             }
         }

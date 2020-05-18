@@ -2,8 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-             git'https://github.com/nikolamarasovic/demo.git'
+             
             steps {
+                git'https://github.com/nikolamarasovic/demo.git'
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
                 
                 

@@ -6,15 +6,18 @@ pipeline {
             steps {
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
                 
-                scm {
-                    git {
-                        remote {
-                        name('remote')
-                        url ('https://github.com/nikolamarasovic/demo.git')
-                        }
-                        branch 'master'
-                        }
-                }
+                // scm {
+                //     git {
+                //         remote {
+                //         name('remote')
+                //         url ('https://github.com/nikolamarasovic/demo.git')
+                //         }
+                //         branch 'master'
+                //         }
+                // }
+                 properties {
+                    githubProjectUrl('https://github.com/nikolamarasovic/demo.git')
+    }
                 triggers {
                     githubPush()
                 }          

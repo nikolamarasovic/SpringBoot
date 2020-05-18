@@ -9,7 +9,7 @@ pipeline {
                 scm {
                     git {
                         remote {
-                        url 'https://github.com/nikolamarasovic/demo.git'
+                        url ('https://github.com/nikolamarasovic/demo.git')
                         }
                         branch 'master'
                         }

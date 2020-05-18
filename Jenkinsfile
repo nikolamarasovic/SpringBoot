@@ -2,15 +2,16 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-            
-            scm {
-                git("https://github.com/nikolamarasovic/demo.git", 'master')
-            }
-            triggers {
-                githubPush()
-            }           
+             
             steps {
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
+                
+                scm {
+                    git("https://github.com/nikolamarasovic/demo.git", 'master')
+                }
+                triggers {
+                    githubPush()
+                }          
             }
             post {
                 success {

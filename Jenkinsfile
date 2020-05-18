@@ -5,6 +5,9 @@ pipeline {
              
             steps {
                 git'https://github.com/nikolamarasovic/demo.git'
+                triggers {
+                    githubPush()
+                }
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
                 
                 
@@ -17,9 +20,7 @@ pipeline {
                 //         branch 'master'
                 //         }
                 // }
-                triggers {
-                    githubPush()
-                }          
+                          
             }
             post {
                 success {
@@ -29,12 +30,12 @@ pipeline {
             }
         }
 
-        stage('Create Docker Image'){
-            steps {
+        // stage('Create Docker Image'){
+        //     steps {
                 
-                bat "cd C:/Users/enimara/Downloads/app/app_new/"
-                bat "docker build -t springapp:${env.BUILD_ID} ."
-            }
-        }
+        //         bat "cd C:/Users/enimara/Downloads/app/app_new/"
+        //         bat "docker build -t springapp:${env.BUILD_ID} ."
+        //     }
+        // }
     }
 }

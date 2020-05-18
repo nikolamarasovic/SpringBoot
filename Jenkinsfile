@@ -17,7 +17,7 @@ pipeline {
             steps {
                 
                 bat "dir"
-                bat "docker build ./app_new -t springapp:${env.BUILD_ID}"
+                bat "docker build / -t springapp:${env.BUILD_ID}"
             }
         }
     }

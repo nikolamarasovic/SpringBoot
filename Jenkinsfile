@@ -3,21 +3,20 @@ pipeline {
     stages {
         stage('Build Application') {
              
-             
+            steps {
+                bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
+                
                 scm {
                     git {
                         remote {
-                        url 'https://github.com/lexandro/restapi-demo.git' 
+                        url 'https://github.com/nikolamarasovic/demo.git'
                         }
                         branch 'master'
                         }
                 }
                 triggers {
                     githubPush()
-                } 
-            steps {
-                bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
-                        
+                }          
             }
             post {
                 success {

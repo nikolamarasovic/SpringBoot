@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Build Application') {
              
-            steps {
-                bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
-                
+             
                 scm {
                     git {
                         remote {
@@ -16,7 +14,10 @@ pipeline {
                 }
                 triggers {
                     githubPush()
-                }          
+                } 
+            steps {
+                bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
+                        
             }
             post {
                 success {

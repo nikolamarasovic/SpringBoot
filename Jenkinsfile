@@ -2,9 +2,10 @@ pipeline {
     agent any
     stages {
         stage('Build Application') {
-             
+             git'https://github.com/nikolamarasovic/demo.git'
             steps {
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
+                
                 
                 // scm {
                 //     git {
@@ -15,9 +16,6 @@ pipeline {
                 //         branch 'master'
                 //         }
                 // }
-                 properties {
-                    githubProjectUrl('https://github.com/nikolamarasovic/demo.git')
-    }
                 triggers {
                     githubPush()
                 }          

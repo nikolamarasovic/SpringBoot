@@ -1,2 +1,2 @@
 FROM azul/zulu-openjdk-alpine:8
-ADD maven-wrapper.jar app.jar
+ADD target/app-0.0.1-SNAPSHOT.jar app.jar

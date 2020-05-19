@@ -1,12 +1,8 @@
 pipeline {
     agent any
-    
     stages {
         stage('Build Application') {
-
             steps {
-                git'https://github.com/nikolamarasovic/demo.git'
-                
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
             }
             post {
@@ -16,5 +12,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Create Docker Image'){
+            steps {
+                
+                bat "cd C:/Users/enimara/Downloads/app/app_new/"
+                bat "docker build -t springapp:${env.BUILD_ID} ."
+            }
+        }
     }
-}//sdsds
+    }

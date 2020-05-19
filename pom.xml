@@ -62,7 +62,7 @@
 				<archive>
 					<manifest>
 						<mainClass>org.springframework.boot.loader.JarLauncher</mainClass>
-						<startClass>com.SpringApp.app.LibraryApplication</startClass>
+						
 					</manifest>
 				</archive>
 			</configuration>

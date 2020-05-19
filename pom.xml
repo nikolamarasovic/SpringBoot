@@ -58,12 +58,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			 <configuration>
-                        <classifier>spring-boot</classifier>
-                        <mainClass>
-                            org.springframework.boot.loader.JarLauncher
-                        </mainClass>
-                    </configuration>
+			<configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>org.springframework.boot.loader.JarLauncher</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
 			</plugin>
 		</plugins>
 	</build>

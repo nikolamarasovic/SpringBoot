@@ -16,16 +16,9 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<baseFolder>${basedir}</baseFolder>
 	</properties>
-   <configuration>
-        <archive>
-          <manifest>
-            <addClasspath>true</addClasspath>
-            <classpathPrefix>lib/</classpathPrefix>
-            <mainClass>com.mypackage.MyClass</mainClass>
-          </manifest>
-        </archive>
-      </configuration>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -61,7 +54,11 @@
    </dependency>
  </dependencies>
 
-	<build>
+	
+	
+<build>
+    <directory>${baseFolder}/target</directory>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -1,16 +1,13 @@
 pipeline {
     agent any
-
-    triggers {
-                    githubPush()
-                }
-    git url: 'https://github.com/nikolamarasovic/demo.git'
-    
     stages {
         stage('Build Application') {
 
             steps {
-                
+                git'https://github.com/nikolamarasovic/demo.git'
+                triggers {
+                    githubPush()
+                }
                 bat 'mvn -f C:/Users/enimara/Downloads/app/app_new/pom.xml clean package'
             }
             post {

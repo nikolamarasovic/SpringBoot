@@ -1,19 +1,20 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springapp-deployment
+  name: spring-pod-1
+  labels:
+    name: spring-pod-1
 spec:
+  replicas: #*#REPLICA-COUNT#*#
   selector:
     matchLabels:
-      app: springapp
-  replicas: 2 # tells deployment to run 2 pods matching the template
+      app: spring-pod-1
   template:
     metadata:
       labels:
-        app: springapp
+        app: spring-pod-1
     spec:
       containers:
-      - name: springapp
-        image: springapp:12
-        ports:
-        - containerPort: 9091
+      - name: spring-container
+        image: springapp:100
+ 

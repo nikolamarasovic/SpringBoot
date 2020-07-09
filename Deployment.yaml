@@ -17,4 +17,6 @@ spec:
       containers:
       - name: spring-container
         image: springapp:100
+        ports:
+          - containerPort: 8081
  

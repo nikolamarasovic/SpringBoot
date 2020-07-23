@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Author list</h1>
-<a href="addNewAuthor">New Book</a>
+<a href="addNewAuthor">New Author</a>
 <table>
     <tr>
         <th>ID</th>
@@ -15,11 +15,6 @@
     <tr th:each="author : ${authors}">
         <td th:text="${author.id}"></td>
         <td th:text="${author.authorName}"></td>
-        <td th:text="${author.title}"></td>
-        <!-- <td>
-            <a th:href="@{'/edit/' + ${author.id}}">Edit</a>
-            <a th:href="@{delete/{id}(id=${author.id})}">Delete</a>
-        </td> -->
     </tr>
 </table>
 </body>

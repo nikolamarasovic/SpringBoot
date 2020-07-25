@@ -1,7 +1,7 @@
 package com.SpringApp.app.controllers;
 
 import java.util.List;
-import java.util.Map;
+
 import java.util.Set;
 
 import com.SpringApp.app.domain.Author;
@@ -9,18 +9,15 @@ import com.SpringApp.app.domain.Book;
 import com.SpringApp.app.ViewModels.BookViewModel;
 import com.SpringApp.app.services.BookService;
 
-import org.hibernate.Hibernate;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
 
 @Controller
 public class BookController {

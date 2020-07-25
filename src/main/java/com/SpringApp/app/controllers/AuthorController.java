@@ -47,12 +47,6 @@ public class AuthorController {
         return "redirect:/authors";
     }
 
-    // @RequestMapping("/edit/{id}")
-    // public String showEditAuthor(@PathVariable("id") int id, Model model) {
-    // final Author author = service.getAuthor(id);
-    // model.addAttribute("author", author);
-    // return "authors/editAuthor";
-    // }
     @RequestMapping("/deleteAuthor/{id}")
     public String deleteAuthor(@PathVariable("id") int id) {
     service.deleteAuthor(id);

@@ -2,14 +2,9 @@ package com.SpringApp.app.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
-import com.SpringApp.app.domain.Author;
 import com.SpringApp.app.domain.Book;
 import com.SpringApp.app.ViewModels.BookViewModel;
-import com.SpringApp.app.repositories.AuthorRepository;
 import com.SpringApp.app.repositories.BookRepository;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

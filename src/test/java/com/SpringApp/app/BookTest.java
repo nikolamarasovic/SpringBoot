@@ -21,6 +21,6 @@ public class BookTest {
     book.setId(3);
     
     book1 = new BookViewModel(book);
-    assertEquals(book.getId(),book1.getId());
+    assertEquals(book.getId(),4);
  }
 }
